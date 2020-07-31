@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Body">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAEAAgAQAIIBgAAEAAABAAAQAQAAAIAQA=</HashCode>
+      <FileName>Assets\Scripts\Body.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BodyBuilder">
+    <Position X="9" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Assets\Scripts\BodyBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CollisionConstraint">
+    <Position X="13.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAIAAAAACAACA=</HashCode>
+      <FileName>Assets\Scripts\CollisionConstraint.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Constraint">
+    <Position X="11.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAECA=</HashCode>
+      <FileName>Assets\Scripts\Constraint.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DistanceConstraint">
+    <Position X="11.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Assets\Scripts\DistanceConstraint.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RigidBody">
+    <Position X="6.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\RigidBody.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShapeConstraint">
+    <Position X="10" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAACAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Assets\Scripts\ShapeConstraint.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Solver">
+    <Position X="4.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>DAAAAAAAAAAAIAAIAAAAAAAoAAAAEAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Assets\Scripts\Solver.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StaticConstraint">
+    <Position X="8.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAACA=</HashCode>
+      <FileName>Assets\Scripts\StaticConstraint.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestScene">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAjAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAEAA=</HashCode>
+      <FileName>Assets\Scripts\TestScene.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
