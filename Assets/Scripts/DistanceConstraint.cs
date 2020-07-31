@@ -9,6 +9,7 @@ public class DistanceConstraint : Constraint
     private int _i1 => _indices[1];
     public DistanceConstraint(Body body, int i0, int i1) : base(body)
     {
+        _stiffness = 0.3f;
         _indices = new [] {i0, i1};
         _d = (_body.Positions[i0] - _body.Positions[i1]).magnitude;
     }

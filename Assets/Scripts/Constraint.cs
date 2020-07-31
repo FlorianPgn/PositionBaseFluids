@@ -12,7 +12,7 @@ public abstract class Constraint
     public Constraint(Body body)
     {
         _body = body;
-        _stiffness = 0.3f;
+        _stiffness = 0.5f;
     }
 
     public abstract void SolveConstraint(int nIteration);

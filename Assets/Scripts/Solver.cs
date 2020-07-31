@@ -195,7 +195,7 @@ public class Solver
                Vector3 direction = b.Projected[i] - b.Positions[i];
                Vector3 rayOffset = direction.normalized * 0.2f;
                Debug.DrawLine(b.Positions[i], b.Projected[i], Color.blue);
-               Debug.Log($"Pos: {b.Positions[i]}, Proj: {b.Projected[i]}");
+               // Debug.Log($"Pos: {b.Positions[i]}, Proj: {b.Projected[i]}");
                float distance = direction.magnitude;
                if (distance > 0)
                {
@@ -203,7 +203,6 @@ public class Solver
                   RaycastHit hit;
                   if (c.Raycast(ray, out hit, distance+rayOffset.magnitude))
                   {
-                     Debug.Log("Collision");
                      Vector3 qc = hit.point;
                      Vector3 n = hit.normal;
                      // Debug.Log($"HIT qc:{qc} n:{n}");

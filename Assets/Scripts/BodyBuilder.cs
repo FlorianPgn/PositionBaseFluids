@@ -48,6 +48,7 @@ public static class BodyBuilder
         }*/
         ShapeConstraint c = new ShapeConstraint(b);
         b.AddConstraint(c);
+        
         return b;
     }
 }
