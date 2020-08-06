@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class Solver
+public class PBDSolver
 {
    public float kDamping = 0.98f;
+   public int SolverIterations = 4;
    private List<Body> _bodies;
    private Collider[] _colliders;
-   
-   public Solver(Collider[] colliders)
+
+   private float deltaTime = 0.02f;
+   public PBDSolver(Collider[] colliders)
    {
       _bodies = new List<Body>();
       _colliders = colliders;
@@ -31,7 +33,7 @@ public class Solver
          {
             for (int i = 0; i < b.NumParticles; i++)
             {
-               b.Velocities[i] += Time.deltaTime * (b.Forces[i] / b.Masses[i]);
+               b.Velocities[i] += deltaTime * (b.Forces[i] / b.Masses[i]);
             }
          }
 
@@ -43,7 +45,7 @@ public class Solver
          {
             for (int i = 0; i < b.NumParticles; i++)
             {
-               b.Projected[i] = b.Positions[i] + Time.deltaTime * b.Velocities[i];
+               b.Projected[i] = b.Positions[i] + deltaTime * b.Velocities[i];
             }
          }
 
@@ -53,13 +55,12 @@ public class Solver
          // Project constraints
          ProjectConstraints();
          
-         
          // Update positions and velocities
          foreach (Body b in _bodies)
          {
             for (int i = 0; i < b.NumParticles; i++)
             {
-               b.Velocities[i] += Time.deltaTime * b.Forces[i] / b.Masses[i];
+               b.Velocities[i] += deltaTime * b.Forces[i] / b.Masses[i];
                b.Positions[i] = b.Projected[i];
             }
          }
@@ -81,11 +82,6 @@ public class Solver
    {
       foreach (Body b in _bodies)
       {
-         /*// Temp easy damping
-         for (int i = 0; i < b.NumParticles; i++)
-         {
-            b.Velocities[i] *= 0.98f;
-         }*/
          // Compute centered position and velocity
          Vector3 xcm = Vector3.zero;
          Vector3 vcm = Vector3.zero;
@@ -140,13 +136,7 @@ public class Solver
          
          // Compute omega
          Vector3 w = I.inverse * L ;
-
-         /*Debug.Log ("I: ");
-         Debug.Log (I);
-         Debug.Log ("L: ");
-         Debug.Log (L);
-         Debug.Log (" omega :");
-         Debug.Log ( w );*/
+         
          // Damp velocities
          for (int i = 0; i < b.NumParticles; i++)
          {
@@ -154,30 +144,27 @@ public class Solver
             b.Velocities[i] += kDamping * deltaV;
          }   
       }
-
-      
-
    }
 
    public void ProjectConstraints()
    {
-      for (int i = 0; i < 4; i++)
+      for (int i = 0; i < SolverIterations; i++)
       {
          foreach (Body b in _bodies)
          {
             foreach (Constraint c in b.StaticConstraints)
             {
-               c.SolveConstraint(i);
+               c.SolveConstraint(i, deltaTime);
             }
             
             foreach (Constraint c in b.Constraints)
             {
-               c.SolveConstraint(i);
+               c.SolveConstraint(i, deltaTime);
             }
                
             foreach (Constraint c in b.CollConstraints)
             {
-               c.SolveConstraint(i);
+               c.SolveConstraint(i, deltaTime);
             }
          }
       }

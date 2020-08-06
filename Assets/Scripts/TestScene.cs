@@ -7,7 +7,7 @@ public class TestScene : MonoBehaviour
 {
     private Body _body1;
     private Body _body2;
-    private Solver _solver;
+    private PBDSolver _pbdSolver;
 
     public Collider[] Colliders;
 
@@ -24,18 +24,18 @@ public class TestScene : MonoBehaviour
         _body1.InvMasses[0] = 1f;
         _body1.Masses[1] = 1f;
         _body1.InvMasses[1] = 1f;
-        // StaticConstraint sConstraint = new StaticConstraint(_body1, new []{0});
-        // Constraint distConstraint = new DistanceConstraint(_body1, 0, 1);
-        // _body1.AddStaticConstraint(sConstraint);
-        // _body1.AddConstraint(distConstraint);
+        StaticConstraint sConstraint = new StaticConstraint(_body1, new []{0});
+        Constraint distConstraint = new DistanceConstraint(_body1, 0, 1);
+        _body1.AddStaticConstraint(sConstraint);
+        _body1.AddConstraint(distConstraint);
         
-        _body2 = BodyBuilder.CreateCube(transform.position + Vector3.right * 2, 1, 10);
+        _body2 = BodyBuilder.CreateFullCube(transform.position + Vector3.right * 2, 1);
         //StaticConstraint staticConstraint = new StaticConstraint(_body2, new []{26});
         // _body2.AddStaticConstraint(staticConstraint);
         
-        _solver = new Solver(Colliders);
-        _solver.AddBody(_body1);
-        _solver.AddBody(_body2);
+        _pbdSolver = new PBDSolver(Colliders);
+        _pbdSolver.AddBody(_body1);
+        // _pbdSolver.AddBody(_body2);
         
         
         _particles = new Transform[_body2.NumParticles];
@@ -47,18 +47,13 @@ public class TestScene : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         for (int i = 0; i < _body2.NumParticles; i++)
         {
             _particles[i].position = _body2.Positions[i];
         }
-        _solver.Solve();
-    }
-
-    private void Update()
-    {
-        
+        _pbdSolver.Solve();
     }
 
     private void OnDrawGizmos()

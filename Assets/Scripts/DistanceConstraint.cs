@@ -14,7 +14,7 @@ public class DistanceConstraint : Constraint
         _d = (_body.Positions[i0] - _body.Positions[i1]).magnitude;
     }
 
-    public override void SolveConstraint(int nIteration)
+    public override void SolveConstraint(int nIteration, float deltaTime)
     {
         Vector3 l = _body.Positions[_i0] - _body.Positions[_i1];
         Vector3 deltaP = (l.magnitude - _d) * l / l.magnitude;

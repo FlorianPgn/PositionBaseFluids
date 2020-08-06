@@ -26,7 +26,7 @@ public class ShapeConstraint : Constraint
         
     }
 
-    public override void SolveConstraint(int nIteration)
+    public override void SolveConstraint(int nIteration, float deltaTime)
     {
         Vector3 cm = Vector3.zero;
         for (int i = 0; i < _body.NumParticles; i++)

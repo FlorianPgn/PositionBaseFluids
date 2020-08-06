@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class BodyBuilder
 {
-    public static Body CreateCube(Vector3 pos, int width=1, int particlesPerUnit=10)
+    public static Body CreateCube(Vector3 pos, int width=1)
     {
         int nbParticles = 8;
         Body b = new Body(nbParticles);
@@ -26,7 +26,15 @@ public static class BodyBuilder
                 }
             }   
         }
-        /*int nbParticles = (int) Mathf.Pow(particlesPerUnit * width, 3);
+        ShapeConstraint c = new ShapeConstraint(b);
+        b.AddConstraint(c);
+        
+        return b;
+    }
+
+    public static Body CreateFullCube(Vector3 pos, int width = 1, int particlesPerUnit = 10)
+    { 
+        int nbParticles = (int) Mathf.Pow(particlesPerUnit * width, 3);
         Body b = new Body(nbParticles);
         b.ParticlesRadius = 1.0f / particlesPerUnit;
         for (int i = 0; i < particlesPerUnit * width; i++)
@@ -45,10 +53,10 @@ public static class BodyBuilder
                     b.InvMasses[index] = 1 / b.Masses[index];
                 }
             }   
-        }*/
+        }
         ShapeConstraint c = new ShapeConstraint(b);
         b.AddConstraint(c);
-        
+
         return b;
     }
 }

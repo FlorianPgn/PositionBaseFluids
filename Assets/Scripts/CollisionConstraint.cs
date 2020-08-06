@@ -15,7 +15,7 @@ public class CollisionConstraint : Constraint
         _qc = qc;
     }
 
-    public override void SolveConstraint(int nIteration)
+    public override void SolveConstraint(int nIteration, float deltaTime)
     {
         // Inequality constraint
         float cp = Vector3.Dot(_body.Projected[i] - _qc, _n);
@@ -23,7 +23,7 @@ public class CollisionConstraint : Constraint
         {
             float kCorr = (1 - Mathf.Pow(1 - _stiffness, 1/(float) nIteration));
             _body.Projected[i] += _n * (-cp * kCorr);
-            _body.Velocities[i] = _n * -cp / Time.fixedDeltaTime;
+            // _body.Velocities[i] = _n * -cp / deltaTime;
         }
     }
 }

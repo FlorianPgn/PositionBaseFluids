@@ -18,7 +18,7 @@ public class StaticConstraint : Constraint
         }
     }
 
-    public override void SolveConstraint(int nIteration)
+    public override void SolveConstraint(int nIteration, float deltaTime)
     {
         for (int i = 0; i < _indices.Length; i++)
         {

@@ -3,33 +3,39 @@
   <Class Name="Body">
     <Position X="6.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAIAAAAEAAgAQAIIBgAAEAAABAAAQAQAAAIAQA=</HashCode>
+      <HashCode>AAAAAAAIAAAAEAAgAQAIIBgAAEAAABAAAQAQAAQIAQA=</HashCode>
       <FileName>Assets\Scripts\Body.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="BodyBuilder">
-    <Position X="9" Y="1" Width="1.5" />
+    <Position X="4.75" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <HashCode>AAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
       <FileName>Assets\Scripts\BodyBuilder.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CollisionConstraint">
-    <Position X="13.5" Y="3.75" Width="1.5" />
+    <Position X="13.5" Y="4" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAIAAAAACAACA=</HashCode>
       <FileName>Assets\Scripts\CollisionConstraint.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Constraint">
-    <Position X="11.25" Y="1" Width="1.5" />
+    <Position X="12.5" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAACAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAECA=</HashCode>
       <FileName>Assets\Scripts\Constraint.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="DistanceConstraint">
-    <Position X="11.75" Y="3.75" Width="1.5" />
+    <Position X="11.75" Y="4" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAgAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
       <FileName>Assets\Scripts\DistanceConstraint.cs</FileName>
@@ -43,31 +49,71 @@
     </TypeIdentifier>
   </Class>
   <Class Name="ShapeConstraint">
-    <Position X="10" Y="3.75" Width="1.5" />
+    <Position X="10" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAEAACAAAAAAAAAAAAAAAAAACA=</HashCode>
       <FileName>Assets\Scripts\ShapeConstraint.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Solver">
-    <Position X="4.75" Y="3.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>DAAAAAAAAAAAIAAIAAAAAAAoAAAAEAAAAAAAAAAQAAA=</HashCode>
-      <FileName>Assets\Scripts\Solver.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="StaticConstraint">
-    <Position X="8.25" Y="3.75" Width="1.5" />
+    <Position X="8.25" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAACA=</HashCode>
       <FileName>Assets\Scripts\StaticConstraint.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TestScene">
-    <Position X="4.75" Y="0.5" Width="1.5" />
+    <Position X="3" Y="1.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
-      <HashCode>AAAEAAAAAjAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAEAA=</HashCode>
+      <HashCode>AAQEAAACACAAAAACAAABAAAAAAAAAAAQAAAAAAAAEAA=</HashCode>
       <FileName>Assets\Scripts\TestScene.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Helper" Collapsed="true">
+    <Position X="12.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Helper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FluidTestScene">
+    <Position X="3" Y="3.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAQAAAACCDAAAAACAAAAAAAAAAAAAAAQgAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FluidTestScene.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PBDSolver">
+    <Position X="8.25" Y="0.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>DAAAAAAAAAkAIAAIAAQAAAAoAAAAEAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Assets\Scripts\PBDSolver.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PBFSolver">
+    <Position X="10" Y="0.5" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>DAAAAQgAAAAAQJAAAAQAMBAIAAAAEgAAQAACBAAQMgA=</HashCode>
+      <FileName>Assets\Scripts\PBFSolver.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FluidBody">
+    <Position X="4.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAgAAAAAAAAAAAIAAAAAgAgAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FluidBody.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

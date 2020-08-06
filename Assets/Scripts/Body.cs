@@ -14,7 +14,7 @@ public class Body
     public Vector3[] Velocities;
     public Vector3[] Forces;
     public List<Constraint> Constraints;
-    public List<Constraint> CollConstraints;
+    public List<CollisionConstraint> CollConstraints;
     public List<Constraint> StaticConstraints;
 
     public Body(int numParticles)
@@ -28,7 +28,7 @@ public class Body
         Velocities = new Vector3[NumParticles];
         Forces = new Vector3[NumParticles];
         Constraints = new List<Constraint>();
-        CollConstraints = new List<Constraint>();
+        CollConstraints = new List<CollisionConstraint>();
         StaticConstraints = new List<Constraint>();
     }
 
@@ -37,7 +37,7 @@ public class Body
         Constraints.Add(c);
     }
     
-    public void AddCollConstraint(Constraint c)
+    public void AddCollConstraint(CollisionConstraint c)
     {
         CollConstraints.Add(c);
     }
@@ -49,6 +49,6 @@ public class Body
 
     public void ResetCollConstraints()
     {
-        CollConstraints = new List<Constraint>();
+        CollConstraints = new List<CollisionConstraint>();
     }
 }

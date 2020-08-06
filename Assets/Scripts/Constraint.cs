@@ -15,5 +15,5 @@ public abstract class Constraint
         _stiffness = 0.5f;
     }
 
-    public abstract void SolveConstraint(int nIteration);
+    public abstract void SolveConstraint(int nIteration, float deltaTime);
 }
